@@ -36,17 +36,9 @@ public class DefaultPerson implements Person {
         return this.phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
     @Override
     public String getAddress() {
         return this.address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     @Override
@@ -54,8 +46,12 @@ public class DefaultPerson implements Person {
         return this.age;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    @Override
+    public String toString() {
+        return "Name: " + this.firstName + " " + this.lastName + ";\n"
+                + "Age: " + this.age + "; "
+                + "Phone: " + this.phoneNumber + "; "
+                + "Address: " + this.address + ".";
     }
 
     static class Builder extends DefaultPerson {
